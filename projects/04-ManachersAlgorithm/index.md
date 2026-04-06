@@ -14,9 +14,9 @@ Go [back to home page](../../index.html)
 ---------------------------------------
 
 - Implementations:
-	- [C++](./implementations/coinChange.cpp)
-	- [Java](./implementations/coinChange.java)
-	- [Python](./implementations/coinChange.py)
+	- [C++](./implementations/manachers.cpp)
+	- [Java](./implementations/Manachers.java)
+	- [Python](./implementations/manachers.py)
 	- io
 		- [test input 1](./implementations/io/sample.in.1)
 		- [test output 1](./implementations/io/sample.out.1)
