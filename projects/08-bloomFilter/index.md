@@ -14,15 +14,17 @@ Go [back to home page](../../index.html)
 ---------------------------------------
 
 - Implementations:
-	- [C++](./implementations/bloomFilter.cpp)
-	- [Java](./implementations/coinChange.java)
-	- [Python](./implementations/bloomFilter.py)
-	- io
-		- [test input 1](./implementations/io/test.txt)
-		- [test output 1](./implementations/io/expected_output.txt)
-		- ...add more as needed
+	- [C++](./implementation/bloomFilter.cpp)
+	- [Java](./implementation/Main.java) (with [BloomFilter.java](./implementation/BloomFilter.java))
+	- [Python](./implementation/BloomFilter.py)
+- I/O
+	- [test.txt](./implementation/io/test.txt)
+	- Expected outputs (same input format for each language on `test.txt`):
+		- [expected_output.txt](./implementation/io/expected_output.txt) — Python (`BloomFilter.py`)
+		- [expected_output_java.txt](./implementation/io/expected_output_java.txt) — Java (placeholder; fill in)
+		- [expected_output_cpp.txt](./implementation/io/expected_output_cpp.txt) — C++ (placeholder; fill in)
 
-**Implementation note.** Our Python, Java, and C++ runs can produce different outputs for the same input, because built-in string hashing and type behavior differ by language, so the bit indices we flip need not line up across ports even when the algorithm matches. Each version is written to stay consistent with its own hashing; any gap between language-specific expected-output files comes from that platform difference rather than from inconsistent ports of the same design.
+**Implementation note.** Different hash schemes change which queries look like false positives vs absent; compare each implementation to its own expected file once populated.
 
 <a name="overview"></a>Slides
 ---------------------------------------

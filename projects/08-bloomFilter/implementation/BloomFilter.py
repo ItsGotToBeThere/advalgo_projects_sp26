@@ -101,7 +101,7 @@ def main():
     """
     num_tests = int(sys.stdin.readline().strip())
 
-    for _ in range(num_tests):
+    for t in range(num_tests):
         n, p, i, q = sys.stdin.readline().split()
         expected_item_count = int(n)
         false_positive_prob = float(p)
@@ -126,7 +126,9 @@ def main():
         for key in inserted_keys:
             bloom.add(key)
 
-        print(f"m={bloom.size} k={bloom.hash_count} n={expected_item_count} p={false_positive_prob}")
+        print(
+            f"m={bloom.size} k={bloom.hash_count} n={expected_item_count} p={false_positive_prob:.2f}"
+        )
         for key in query_keys:
             if bloom.check(key):
                 if key in inserted_set:
@@ -135,7 +137,8 @@ def main():
                     print(f"{key}\tfalse_positive")
             else:
                 print(f"{key}\tabsent")
-        print()
+        if t < num_tests - 1:
+            print()
 
 
 if __name__ == "__main__":
