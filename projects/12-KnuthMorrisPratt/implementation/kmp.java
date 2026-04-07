@@ -1,8 +1,8 @@
-public class KnuthMorrisPratt {
+public class kmp {
     private String text;
     private String pattern;
 
-    public KnuthMorrisPratt(String text, String pattern) {
+    public kmp(String text, String pattern) {
         this.text = text;
         this.pattern = pattern;
     }
@@ -91,8 +91,8 @@ public class KnuthMorrisPratt {
         if (text == null) text = "";
         if (pattern == null) pattern = "";
 
-        KnuthMorrisPratt kmp = new KnuthMorrisPratt(text, pattern);
-        java.util.List<Integer> matches = kmp.search();
+        kmp solver = new kmp(text, pattern);
+        java.util.List<Integer> matches = solver.search();
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < matches.size(); i++) {
