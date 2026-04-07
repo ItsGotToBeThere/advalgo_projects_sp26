@@ -1,4 +1,4 @@
-Project 00 - Coin Change
+Project 09 - Hyper Log Log
 ===============================
 
 Go [back to home page](../../index.html)
@@ -14,7 +14,7 @@ Go [back to home page](../../index.html)
 ---------------------------------------
 
 - Implementations:
-	- [C++](./implementations/coinChange.cpp)
+	- [C++](./implementations/hyperLogLog.cpp)
 	- [Java](./implementations/coinChange.java)
 	- [Python](./implementations/coinChange.py)
 	- io
