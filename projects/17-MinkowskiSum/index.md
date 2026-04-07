@@ -14,13 +14,16 @@ Go [back to home page](../../index.html)
 ---------------------------------------
 
 - Implementations:
-	- [C++](./implementations/minkowskiSum.cpp)
-	- [Java](./implementations/minkowskiSum.java)
-	- [Python](./implementations/minkowskiSum.py)
+	- [C++](./implementation/minkowskiSum.cpp)
+	- [Java](./implementation/minkowskiSum.java)
+	- [Python](./implementation/minkowskiSum.py)
 	- io
-		- [test input 1](./implementations/io/sample.in.1)
-		- [test output 1](./implementations/io/sample.out.1)
-		- ...add more as needed
+		- [test input 1](./implementation/io/sample.in.1)
+		- [test output 1](./implementation/io/sample.out.1)
+		- [test input 2](./implementation/io/sample.in.2)
+		- [test output 2](./implementation/io/sample.out.2)
+        - [test input 3](./implementation/io/sample.in.3)
+		- [test output 3](./implementation/io/sample.out.3)
 
 <a name="overview"></a>Slides
 ---------------------------------------
