@@ -2,6 +2,10 @@
 #include <vector>
 #include <random>
 #include <limits>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <filesystem>
 using namespace std;
 
 /*
@@ -387,99 +391,83 @@ public:
     }
 };
 
-/*
-    Helper function to print a vector nicely.
-*/
-void printVector(const vector<int>& v) {
-    for (int x : v) {
-        cout << x << " ";
+string inorderString(const Treap& treap) {
+    vector<int> result = treap.inorder();
+    ostringstream oss;
+    for (size_t i = 0; i < result.size(); ++i) {
+        if (i > 0) oss << " ";
+        oss << result[i];
     }
-    cout << "\n";
+    return oss.str();
 }
 
-/*
-    Example usage / basic test
-*/
-int main() {
+bool run_test(const string& input_file, const string& output_file) {
+    Treap treap;
+    vector<string> actual_output;
+    ifstream fin(input_file);
+    string line;
+
+    while (getline(fin, line)) {
+        istringstream iss(line);
+        string cmd;
+        if (!(iss >> cmd)) continue;
+
+        if (cmd == "insert") {
+            int value;
+            iss >> value;
+            treap.insert(value);
+        } else if (cmd == "erase") {
+            int value;
+            iss >> value;
+            treap.erase(value);
+        } else if (cmd == "search") {
+            int value;
+            iss >> value;
+            actual_output.push_back(treap.search(value) ? "true" : "false");
+        } else if (cmd == "inorder") {
+            actual_output.push_back(inorderString(treap));
+        }
+    }
+
+    vector<string> expected_output;
+    ifstream fout(output_file);
+    while (getline(fout, line)) {
+        if (!line.empty()) {
+            expected_output.push_back(line);
+        }
+    }
+
+    bool passed = actual_output == expected_output;
+    cout << input_file << ": " << (passed ? "PASS" : "FAIL") << "\n";
+    if (!passed) {
+        cout << "Expected:\n";
+        for (const auto& expected : expected_output) {
+            cout << expected << "\n";
+        }
+        cout << "Got:\n";
+        for (const auto& actual : actual_output) {
+            cout << actual << "\n";
+        }
+    }
+    return passed;
+}
+
+int main(int argc, char* argv[]) {
+    filesystem::path base_path = argc > 0 ? filesystem::path(argv[0]).parent_path() : filesystem::current_path();
+    if (base_path.empty()) {
+        base_path = filesystem::current_path();
+    }
+    filesystem::path io_dir = base_path / "io";
+
+    int total = 3;
     int passed = 0;
-    int total = 4;
-
-    // Test 1
-    Treap t1;
-    t1.insert(5);
-    t1.insert(3);
-    t1.insert(7);
-    t1.insert(2);
-    t1.insert(4);
-
-    bool test1 = t1.search(5) && t1.search(2) && !t1.search(6) && t1.validate();
-    cout << "Test 1: basic insert/search "
-         << (test1 ? "PASS" : "FAIL") << "\n";
-    if (test1) passed++;
-
-    // Test 2
-    vector<int> expected2 = {2, 3, 4, 5, 7};
-    vector<int> actual2 = t1.inorder();
-
-    bool test2 = (actual2 == expected2);
-    cout << "Test 2: inorder traversal "
-         << (test2 ? "PASS" : "FAIL") << "\n";
-
-    if (!test2) {
-        cout << "Expected: ";
-        printVector(expected2);
-        cout << "Got:      ";
-        printVector(actual2);
+    for (int i = 1; i <= total; ++i) {
+        filesystem::path in_file = io_dir / ("sample.in." + to_string(i));
+        filesystem::path out_file = io_dir / ("sample.out." + to_string(i));
+        if (run_test(in_file.string(), out_file.string())) {
+            passed++;
+        }
     }
-    if (test2) passed++;
-
-    // Test 3
-    t1.erase(3);
-    t1.erase(42);
-
-    vector<int> expected3 = {2, 4, 5, 7};
-    vector<int> actual3 = t1.inorder();
-
-    bool test3 = (actual3 == expected3) && !t1.search(3) && t1.validate();
-    cout << "Test 3: erase "
-         << (test3 ? "PASS" : "FAIL") << "\n";
-
-    if (!test3) {
-        cout << "Expected: ";
-        printVector(expected3);
-        cout << "Got:      ";
-        printVector(actual3);
-    }
-    if (test3) passed++;
-
-    // Test 4
-    Treap a;
-    Treap b;
-
-    a.insert(10);
-    a.insert(20);
-    a.insert(30);
-
-    b.insert(5);
-    b.insert(15);
-    b.insert(25);
-
-    a.unite(b);
-
-    vector<int> expected4 = {5, 10, 15, 20, 25, 30};
-    vector<int> actual4 = a.inorder();
-
-    bool test4 = (actual4 == expected4) && a.validate();
-    cout << "Test 4: unite "
-         << (test4 ? "PASS" : "FAIL") << "\n";
-
-    if (!test4) {
-        cout << "Expected: ";
-        printVector(expected4);
-        cout << "Got:      ";
-        printVector(actual4);
-    }
-    if (test4) passed++;
 
     cout << "\nFinal: " << passed << " / " << total << " tests passed.\n";
     return (passed == total) ? 0 : 1;

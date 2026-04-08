@@ -1,4 +1,11 @@
 import java.util.Random;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class treaps {
     /*
@@ -187,65 +194,81 @@ public class treaps {
         String result = "";
         if (!left.isEmpty()) {
             result += left + " ";
-        }; 
+        }
         result += node;
         if (!right.isEmpty()) result += " " + right;
         return result;
     }
 
-    /*
-    
-    */
+    private static boolean runTest(String inputFile, String outputFile) {
+        treaps treap = new treaps();
+        List<String> actualOutput = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.trim().split("\\s+");
+                if (parts.length == 0 || parts[0].isEmpty()) continue;
+
+                String cmd = parts[0];
+                if (cmd.equals("insert")) {
+                    treap.insert(Integer.parseInt(parts[1]));
+                } else if (cmd.equals("erase")) {
+                    treap.delete(Integer.parseInt(parts[1]));
+                } else if (cmd.equals("search")) {
+                    boolean result = treap.search(Integer.parseInt(parts[1]));
+                    actualOutput.add(Boolean.toString(result).toLowerCase());
+                } else if (cmd.equals("inorder")) {
+                    actualOutput.add(inorderString(treap));
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to read input file: " + e.getMessage());
+            return false;
+        }
+
+        List<String> expectedOutput = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(outputFile))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.trim().isEmpty()) {
+                    expectedOutput.add(line.trim());
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to read output file: " + e.getMessage());
+            return false;
+        }
+
+        boolean passed = actualOutput.equals(expectedOutput);
+        System.out.println(inputFile + ": " + (passed ? "PASS" : "FAIL"));
+        if (!passed) {
+            System.out.println("Expected:");
+            expectedOutput.forEach(System.out::println);
+            System.out.println("Got:");
+            actualOutput.forEach(System.out::println);
+        }
+
+        return passed;
+    }
+
     public static void main(String[] args) {
+        Path baseDir = Paths.get(System.getProperty("user.dir"));
+        Path ioDir = baseDir.resolve("io");
+
+        int total = 3;
         int passed = 0;
-        int total = 4;
 
-        // basic insert and search
-        treaps treaps = new treaps();
-        treaps.insert(5);
-        treaps.insert(3);
-        treaps.insert(7);
-        treaps.insert(2);
-        treaps.insert(4);
-        boolean testinsert = treaps.search(5) && treaps.search(2) && !treaps.search(6);
-        System.out.println("Test 1: insert/search is a" + (testinsert ? "PASS" : "FAIL"));
-        if (testinsert) {
-            passed++;
+        for (int i = 1; i <= total; i++) {
+            String inFile = ioDir.resolve("sample.in." + i).toString();
+            String outFile = ioDir.resolve("sample.out." + i).toString();
+            if (runTest(inFile, outFile)) {
+                passed++;
+            }
         }
 
-        // make sure inorder is right
-        // test inorder should be 2 3 4 5 7 because we inserted those values 
-        String expected = "2 3 4 5 7";
-        String actual = inorderString(treaps);
-        boolean testinorder = expected.equals(actual);
-        System.out.println("Test 2: inorder is a " + (testinorder ? "PASS" : "FAIL"));
-        if (testinorder) {
-            passed++;
-        }
-
-
-        // delete
-        // test that we went from 2 3 4 5 7 to 2 4 5 7 and that search for the deleted node returns false
-        treaps.delete(3);
-        String expecteddel = "2 4 5 7";
-        String actualdel = inorderString(treaps);
-        boolean testdel = expecteddel.equals(actualdel) && !treaps.search(3);
-        System.out.println("Test 3: delete is a " + (testdel ? "PASS" : "FAIL"));
-        if (testdel) {
-            passed++; 
-        } 
-
-        // Test Case 4: if we try to delete something that doesnt exist it wont change 
-        treaps.delete(42);
-        String expected4 = "2 4 5 7";
-        String actual4 = inorderString(treaps);
-        boolean test4 = expected4.equals(actual4);
-        System.out.println("Test 4: delete something that doesnt exist  " + (test4 ? "PASS" : "FAIL") + " (got: " + actual4 + ")");
-        if (test4) {
-            passed++;
-        }
-        // test that all of our cases passed and return to user!
-        System.out.println("\nwhen running my treaps you got: " + passed + " / " + total + " tests passed.");
+        System.out.println();
+        System.out.println("Final: " + passed + " / " + total + " tests passed.");
         if (passed != total) {
             System.exit(1);
         }
