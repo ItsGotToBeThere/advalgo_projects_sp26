@@ -291,3 +291,11 @@ def bwt(s: str) -> str:
 
     # Join the characters into the final transformed string
     return "".join(result)
+
+
+if __name__ == "__main__":
+    import sys
+
+    data = sys.stdin.read().split()
+    if data:
+        print(bwt(data[0]), end="")
