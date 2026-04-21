@@ -12,22 +12,22 @@ Go [back to home page](../../index.html)
 ---------------------------------------
 
 - Implementations:
-	- [C++](./implementations/timSort.cpp)
-	- [Java](./implementations/timSort.java)
-	- [Python](./implementations/timSort.py)
+	- [C++](./implementation/timSort.cpp)
+	- [Java](./implementation/timSort.java)
+	- [Python](./implementation/timSort.py)
 	- io
-		- [test input 1](./implementations/io/sample.in.1)
-		- [test output 1](./implementations/io/sample.out.1)
-        - [test input 2](./implementations/io/sample.in.2)
-        - [test output 2](./implementations/io/sample.out.2)
-        - [test input 3](./implementations/io/sample.in.3)
-        - [test output 3](./implementations/io/sample.out.3)
-        - [test input 4](./implementations/io/sample.in.4)
-        - [test output 4](./implementations/io/sample.out.4)
-        - [test input 5](./implementations/io/sample.in.5)
-        - [test output 5](./implementations/io/sample.out.5)
-        - [test input 6](./implementations/io/sample.in.6)
-        - [test output 6](./implementations/io/sample.out.6)
+		- [test input 1](./implementation/io/sample.in.1)
+		- [test output 1](./implementation/io/sample.out.1)
+        - [test input 2](./implementation/io/sample.in.2)
+        - [test output 2](./implementation/io/sample.out.2)
+        - [test input 3](./implementation/io/sample.in.3)
+        - [test output 3](./implementation/io/sample.out.3)
+        - [test input 4](./implementation/io/sample.in.4)
+        - [test output 4](./implementation/io/sample.out.4)
+        - [test input 5](./implementation/io/sample.in.5)
+        - [test output 5](./implementation/io/sample.out.5)
+        - [test input 6](./implementation/io/sample.in.6)
+        - [test output 6](./implementation/io/sample.out.6)
 
 <a name="overview"></a>Slides
 ---------------------------------------
@@ -40,7 +40,7 @@ Go [back to home page](../../index.html)
 
 - [Programming Challenge](./programmingChallenge/problemStatement.pdf)
 	- Solutions:
-		- [C++](./programmingChallenge/solutions.pcSol_python.py)
+		- [Python](./programmingChallenge/solutions/pcSol_python.py)
 	- Test Cases:
 		- [Case 1 input](./programmingChallenge/io/test.in.1)
 		- [Case 1 output](./programmingChallenge/io/test.out.1)
