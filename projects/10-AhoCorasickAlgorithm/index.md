@@ -3,7 +3,6 @@ Project 10 - Aho Corasick Algorithm
 
 Go [back to home page](../../index.html)
 
-**NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS REPOSITORY**
 
 <a name="overview"></a>Executive Summary
 ---------------------------------------
@@ -28,7 +27,7 @@ Go [back to home page](../../index.html)
 <a name="overview"></a>Slides
 ---------------------------------------
 
-- [Presentation Slides](./slides/presentation_coinChange.pptx)
+- [Presentation Slides](./slides/presentation_AhoCorasickAlgorithm.pptx)
 
 
 <a name="overview"></a>Programming Challenge
