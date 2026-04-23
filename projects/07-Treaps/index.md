@@ -26,7 +26,7 @@ Go [back to home page](../../index.html)
 <a name="overview"></a>Slides
 ---------------------------------------
 
-- [Presentation Slides](./slides/presentation_coinChange.pptx)
+- [Presentation Slides](./slides/Treaps.pptx)
 
 
 <a name="overview"></a>Programming Challenge
@@ -34,7 +34,7 @@ Go [back to home page](../../index.html)
 
 - [Programming Challenge](./programmingChallenge/problemStatement.pdf)
 	- Solutions:
-		- [C++](./programmingChallenge/solutions.TreapCustom.java)
+		- [Java](./programmingChallenge/solutions/TreapCustom.java)
 	- Test Cases:
 		- [Case 1 input](./programmingChallenge/io/01_empty_tree_all_queries_in.txt)
 		- [Case 1 output](./programmingChallenge/io/01_empty_tree_all_queries_out.txt)
@@ -70,8 +70,8 @@ Go [back to home page](../../index.html)
 		- [Case 16 output](./programmingChallenge/io/16_decreasing_inserts_then_queries_out.txt)
 		- [Case 17 input](./programmingChallenge/io/17_mixed_updates_then_queries_in.txt)
 		- [Case 17 output](./programmingChallenge/io/17_mixed_updates_then_queries_out.txt)
-		- [Case 18 input](./programmingChallenge/io/18_large_values_and_edges_in.txt)
-		- [Case 18 output](./programmingChallenge/io/18_large_values_and_edges_out.txt)
+		- [Case 18 input](./programmingChallenge/io/18_sum_focus_in.txt)
+		- [Case 18 output](./programmingChallenge/io/18_sum_focus_out.txt)
 		- [Case 19 input](./programmingChallenge/io/19_speed_bulk_insert_delete_prefix_in.txt)
 		- [Case 19 output](./programmingChallenge/io/19_speed_bulk_insert_delete_prefix_out.txt)
 		- [Case 20 input](./programmingChallenge/io/20_speed_two_phase_delete_reinsert_block_in.txt)
