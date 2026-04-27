@@ -1,9 +1,7 @@
-Project 00 - Coin Change
+Project 11 - Burrows-Wheeler Transform
 ===============================
 
 Go [back to home page](../../index.html)
-
-**NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS REPOSITORY**
 
 <a name="overview"></a>Executive Summary
 ---------------------------------------
@@ -25,7 +23,7 @@ Go [back to home page](../../index.html)
 <a name="overview"></a>Slides
 ---------------------------------------
 
-- [Presentation Slides](./slides/Burrows-Wheeler-Transform.pptx)
+- [Presentation Slides](./slides/Burrows-Wheeler Transform.pptx)
 
 
 <a name="overview"></a>Programming Challenge
@@ -33,9 +31,9 @@ Go [back to home page](../../index.html)
 
 - [Programming Challenge](./programmingChallenge/problemStatement.pdf)
 	- Solutions:
-		- [C++](./programmingChallenge/solutions.pcSol_cpp.cpp)
+		- [Python](./programmingChallenge/solutions/pcSol_py.py)
 	- Test Cases:
 		- [Case 1 input](./programmingChallenge/io/test.in.1)
 		- [Case 1 output](./programmingChallenge/io/test.out.1)
-		- ...add the others here as needed
+		- [...the rest of the test cases](./programmingChallenge/io/)
 	
