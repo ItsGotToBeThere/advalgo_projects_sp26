@@ -36,7 +36,7 @@ Input Schema:
 <a name="overview"></a>Slides
 ---------------------------------------
 
-- [Presentation Slides](./slides/presentation_coinChange.pptx)
+- [Presentation Slides](./slides/presentation_hopcroft.pptx)
 
 
 <a name="overview"></a>Programming Challenge
@@ -44,7 +44,7 @@ Input Schema:
 
 - [Programming Challenge](./programmingChallenge/problemStatement.pdf)
 	- Solutions:
-		- [C++](./programmingChallenge/solutions.pcSol_cpp.cpp)
+		- [Python](./programmingChallenge/solutions.pcSol_python.py)
 	- Test Cases:
 		- [Case 1 input](./programmingChallenge/io/test.in.1)
 		- [Case 1 output](./programmingChallenge/io/test.out.1)
