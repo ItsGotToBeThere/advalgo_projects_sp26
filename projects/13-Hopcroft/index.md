@@ -44,7 +44,7 @@ Input Schema:
 
 - [Programming Challenge](./programmingChallenge/problemStatement.pdf)
 	- Solutions:
-		- [Python](./programmingChallenge/solutions/pcSol_python.py)
+		- [Python](./programmingChallenge/solutions/pcSol_py.py)
 	- Test Cases:
 		- [Case 1 input](./programmingChallenge/io/test.in.1)
 		- [Case 1 output](./programmingChallenge/io/test.out.1)
