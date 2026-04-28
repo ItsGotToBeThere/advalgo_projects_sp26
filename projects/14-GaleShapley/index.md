@@ -35,7 +35,7 @@ Go [back to home page](../../index.html)
 
 - [Programming Challenge](./programmingChallenge/problemStatement.pdf)
 	- Solutions:
-		- [C++](./programmingChallenge/solutions.pcSol_python.cpp)
+		- [C++](./programmingChallenge/solutions.pcSol_python.py)
 	- Test Cases:
 		- [Case 1 input](./programmingChallenge/io/test.in.1)
 		- [Case 1 output](./programmingChallenge/io/test.out.1)
