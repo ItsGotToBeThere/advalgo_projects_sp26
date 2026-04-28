@@ -1,4 +1,4 @@
-Project 00 - Coin Change
+Project 15 - Mo's Algorithm
 ===============================
 
 Go [back to home page](../../index.html)
