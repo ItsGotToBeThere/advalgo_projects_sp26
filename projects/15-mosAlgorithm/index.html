@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Project 00 - Primality Tests</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../markdown.css" />
+</head>
+<body>
+<h1 id="project-15---mos-algorithm">Project 15 - Mo's Algorithm</h1>
+<p>Go <a href="../../index.html">back to home page</a></p>
+<!-- **NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS REPOSITORY** -->
+<h2 id="executive-summary"><a name="overview"></a>Executive Summary</h2>
+<ul>
+<li><a href="./Mo's Executive Summary.pdf">Executive Summary</a></li>
+</ul>
+<h2 id="implementation"><a name="overview"></a>Implementation</h2>
+<ul>
+<li>Implementations:
+<ul>
+<li><a href="./implementations/mos_rust/src">Rust</a></li>
+<li><a href="./implementations/mos.java">Java</a></li>
+<li><a href="./implementations/mos.py">Python</a></li>
+<li>io
+<ul>
+<li><a href="./implementations/io/test1.in">testut 1</a></li>
+<li><a href="./implementations/io/test1.out">testut 1</a></li>
+<li><a href="./implementations/io/test2.in">testut 2</a></li>
+<li><a href="./implementations/io/test2.out">testut 2</a></li>
+<li><a href="./implementations/io/test3.in">testut 3 </a></li>
+<li><a href="./implementations/io/test3.out">testut 3</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="slides"><a name="overview"></a>Slides</h2>
+<ul>
+<li><a href="./slides/Mos_Presentation.pptx">Presentation Slides</a></li>
+</ul>
+<h2 id="programming-challenge"><a name="overview"></a>Programming
+Challenge</h2>
+<ul>
+<li><a href="./programmingChallenge/Mo_Programming_Challenge.pdf">Programming
+Challenge</a>
+<ul>
+<li>Solutions:
+<ul>
+<li><a
+href="./programmingChallenge/src">Rust</a></li>
+</ul></li>
+<li>Test Cases:
+<ul>
+<li><a href="./programmingChallenge/io/test1.in">Case 1 input</a></li>
+<li><a href="./programmingChallenge/io/test1.out">Case 1
+output</a></li>
+<li><a href="./programmingChallenge/io/test2.in">Case 2 input</a></li>
+<li><a href="./programmingChallenge/io/test2.out">Case 2
+output</a></li>
+<li><a href="./programmingChallenge/io/test3.in">Case 3 input</a></li>
+<li><a href="./programmingChallenge/io/test3.out">Case 3
+output</a></li>
+<li><a href="./programmingChallenge/io/test4.in">Case 4 input</a></li>
+<li><a href="./programmingChallenge/io/test4.out">Case 4
+output</a></li>
+<li><a href="./programmingChallenge/io/test5.in">Case 5 input</a></li>
+<li><a href="./programmingChallenge/io/test5.out">Case 5
+output</a></li>
+<li><a href="./programmingChallenge/io/test6.in">Case 6 input</a></li>
+<li><a href="./programmingChallenge/io/test6.out">Case 6
+output</a></li>
+<li><a href="./programmingChallenge/io/test7.in">Case 7 input</a></li>
+<li><a href="./programmingChallenge/io/test7.out">Case 7
+output</a></li>
+<li><a href="./programmingChallenge/io/test8.in">Case 8 input</a></li>
+<li><a href="./programmingChallenge/io/test8.out">Case 8
+output</a></li>
+<li><a href="./programmingChallenge/io/test9.in">Case 9 input</a></li>
+<li><a href="./programmingChallenge/io/test9.out">Case 9
+output</a></li>
+<li><a href="./programmingChallenge/io/test10.in">Case 10
+input</a></li>
+<li><a href="./programmingChallenge/io/test10.out">Case 10
+output</a></li>
+<li><a href="./programmingChallenge/io/test11.in">Case 11
+input</a></li>
+<li><a href="./programmingChallenge/io/test11.out">Case 11
+output</a></li>
+<li><a href="./programmingChallenge/io/test12.in">Case 12
+input</a></li>
+<li><a href="./programmingChallenge/io/test12.out">Case 12
+output</a></li>
+<li><a href="./programmingChallenge/io/test13.in">Case 13
+input</a></li>
+<li><a href="./programmingChallenge/io/test13.out">Case 13
+output</a></li>
+<li><a href="./programmingChallenge/io/test14.in">Case 14
+input</a></li>
+<li><a href="./programmingChallenge/io/test14.out">Case 14
+output</a></li>
+<li><a href="./programmingChallenge/io/test15.in">Case 15
+input</a></li>
+<li><a href="./programmingChallenge/io/test15.out">Case 15
+output</a></li>
+<li><a href="./programmingChallenge/io/test16.in">Case 16
+input</a></li>
+<li><a href="./programmingChallenge/io/test16.out">Case 16
+output</a></li>
+<li><a href="./programmingChallenge/io/test17.in">Case 17
+input</a></li>
+<li><a href="./programmingChallenge/io/test17.out">Case 17
+output</a></li>
+<li><a href="./programmingChallenge/io/test18.in">Case 18
+input</a></li>
+<li><a href="./programmingChallenge/io/test18.out">Case 18
+output</a></li>
+<li><a href="./programmingChallenge/io/test19.in">Case 19
+input</a></li>
+<li><a href="./programmingChallenge/io/test19.out">Case 19
+output</a></li>
+<li><a href="./programmingChallenge/io/test20.in">Case 20
+input</a></li>
+<li><a href="./programmingChallenge/io/test20.out">Case 20
+output</a></li>
+<li><a href="./programmingChallenge/io/test21.in">Case 21
+input</a></li>
+<li><a href="./programmingChallenge/io/test21.out">Case 21
+output</a></li>
+<li><a href="./programmingChallenge/io/test22.in">Case 22
+input</a></li>
+<li><a href="./programmingChallenge/io/test22.out">Case 22
+output</a></li>
+<li><a href="./programmingChallenge/io/test23.in">Case 23
+input</a></li>
+<li><a href="./programmingChallenge/io/test23.out">Case 23
+output</a></li>
+<li><a href="./programmingChallenge/io/test24.in">Case 24
+input</a></li>
+<li><a href="./programmingChallenge/io/test24.out">Case 24
+output</a></li>
+<li><a href="./programmingChallenge/io/test25.in">Case 25
+input</a></li>
+<li><a href="./programmingChallenge/io/test25.out">Case 25
+output</a></li>
+<li><a href="./programmingChallenge/io/test26.in">Case 26
+input</a></li>
+<li><a href="./programmingChallenge/io/test26.out">Case 26
+output</a></li>
+<li><a href="./programmingChallenge/io/test27.in">Case 27
+input</a></li>
+<li><a href="./programmingChallenge/io/test27.out">Case 27
+output</a></li>
+<li><a href="./programmingChallenge/io/test28.in">Case 28
+input</a></li>
+<li><a href="./programmingChallenge/io/test28.out">Case 28
+output</a></li>
+<li><a href="./programmingChallenge/io/test29.in">Case 29
+input</a></li>
+<li><a href="./programmingChallenge/io/test29.out">Case 29
+output</a></li>
+<li><a href="./programmingChallenge/io/test30.in">Case 30
+input</a></li>
+<li><a href="./programmingChallenge/io/test30.out">Case 30
+output</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</body>
+</html>

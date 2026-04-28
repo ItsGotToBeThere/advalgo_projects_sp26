@@ -3,12 +3,10 @@ Project 00 - Coin Change
 
 Go [back to home page](../../index.html)
 
-**NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS REPOSITORY**
-
 <a name="overview"></a>Executive Summary
 ---------------------------------------
 
-- [Executive Summary](./executiveSummary.pdf)
+- [Executive Summary](./Mo's\ Executive\ Summary.pdf)
 
 <a name="overview"></a>Implementation
 ---------------------------------------
@@ -24,22 +22,19 @@ Go [back to home page](../../index.html)
 		- [test output 2](./implementations/io/test2.out)
 		- [test input 3](./implementations/io/test3.in)
 		- [test output 3](./implementations/io/test3.out)
-		- ...add more as needed
 
 <a name="overview"></a>Slides
 ---------------------------------------
 
-- [Presentation Slides](./slides/presentation_coinChange.pptx)
+- [Presentation Slides](./slides/Mos_Presentation.pptx)
 
 
 <a name="overview"></a>Programming Challenge
 ---------------------------------------
 
-- [Programming Challenge](./programmingChallenge/problemStatement.pdf)
+- [Programming Challenge](./programmingChallenge/Mo's\ Executive\ Summary.pdf)
 	- Solutions:
 		- [C++](./programmingChallenge/solutions.pcSol_cpp.cpp)
 	- Test Cases:
-		- [Case 1 input](./programmingChallenge/io/test.in.1)
-		- [Case 1 output](./programmingChallenge/io/test.out.1)
-		- ...add the others here as needed
+		- [Folder](./programmingChallenge/io)
 	
