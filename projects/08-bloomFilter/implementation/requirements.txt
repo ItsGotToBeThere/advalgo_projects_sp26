@@ -1,0 +1,3 @@
+# PYTHON DEPENDENCIES
+bitarray==3.8.0 # for the bit array
+mmh3>=5.0.0 # for the hash function

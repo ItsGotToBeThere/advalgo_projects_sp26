@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>PC Test Cases </title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../../../markdown.css" />
+</head>
+<body>
+<p>PC Test Cases</p>
+<ul>
+<li>Each input txt file starts with Q, the number of operations.</li>
+<li>Only query operations produce output lines: SEARCH, KTH, COUNT,
+RANGE, SUM.</li>
+<li>SEARCH outputs lowercase true/false.</li>
+<li>For RANGE l r, if l &gt; r then the expected output is 0.</li>
+</ul>
+<p>Files are named with a the number of the test and a short description
+of the edge case being tested.</p>
+<p>Case index: - <code>01_empty_tree_all_queries</code>: all query types
+on an empty set (includes reversed RANGE). -
+<code>02_basic_build_then_queries</code>: insert a small set, then
+SEARCH and KTH and COUNT and RANGE. -
+<code>03_reversed_range_after_small_build</code>: small build, then
+reversed RANGE, plus normal RANGE and COUNT and KTH. -
+<code>04_edge_queries_full_span</code>: edge queries after build (KTH n,
+COUNT at/above max, full-span RANGE). -
+<code>05_delete_on_empty_then_queries</code>: delete on empty (should do
+nothing), then query behavior. - <code>06_single_element_edges</code>:
+single-key set, boundary behavior for SEARCH and KTH and COUNT and
+RANGE. - <code>07_repeat_delete_idempotent</code>: delete the same key
+twice (second delete does nothing), then queries. -
+<code>08_delete_leaf_node</code>: delete a leaf key, then verify with
+queries that our custom fucntions work. -
+<code>09_delete_node_with_two_children</code>: delete basically the
+“middle” key from a larger set, then verify with queries. -
+<code>10_delete_nonexistent_key</code>: delete missing key (does
+nothing), and then queries unchanged. -
+<code>11_range_single_point_present_absent</code>: RANGE between the
+same numbers (for example [5,5]) absent vs present, plus full-span
+range. - <code>12_count_below_minimum</code>: COUNT below min, at min,
+and between keys. - <code>13_count_between_values</code>: COUNT between
+keys and exactly on keys. - <code>14_range_outside_bounds</code>: RANGE
+fully below min, above max, and covering all. -
+<code>15_increasing_inserts_then_queries</code>: insert increasing
+sequence (worst case for BST), then queries. -
+<code>16_decreasing_inserts_then_queries</code>: insert decreasing
+sequence (worst case for BST), then queries. -
+<code>17_mixed_updates_then_queries</code>: mixed insert/delete/insert
+churn, then queries. - <code>18_sum_focus</code>: It is designed to
+catch: normal interval sums, full-span sums, single-element sums,
+empty-range sums, reversed-range behavior, sum after deletion, sum when
+the queried interval has no elements. - speed test:
+<code>19_speed_bulk_insert_delete_prefix</code>: humongous insert then
+bulk delete some starting values, then a few queries (includes reversed
+RANGE). - speed test:
+<code>20_speed_two_phase_delete_reinsert_block</code>: insert all,
+delete a block, reinsert part of it, then queries (includes reversed
+RANGE).</p>
+<p>specific speed-focused cases: - I created 19 and 20 tc to use bulk
+inserts/deletes (thousands of operations) to discourage slow
+per-operation linear scans. We’ll test if the treap is optimal and
+fast!</p>
+</body>
+</html>

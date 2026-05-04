@@ -1,0 +1,3 @@
+# Match implementation/BloomFilter.py
+bitarray==3.8.0
+mmh3>=5.0.0

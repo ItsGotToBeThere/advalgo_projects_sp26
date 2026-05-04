@@ -1,9 +1,7 @@
-Project 00 - Coin Change
+Project 11 - Burrows-Wheeler Transform
 ===============================
 
 Go [back to home page](../../index.html)
-
-**NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS REPOSITORY**
 
 <a name="overview"></a>Executive Summary
 ---------------------------------------
@@ -14,18 +12,18 @@ Go [back to home page](../../index.html)
 ---------------------------------------
 
 - Implementations:
-	- [C++](./implementations/coinChange.cpp)
-	- [Java](./implementations/coinChange.java)
-	- [Python](./implementations/coinChange.py)
+	- [C++](./implementations/cpp/burrowsWheelerTransform.cpp)
+	- [Java](./implementations/burrowsWheelerTransform.java)
+	- [Python](./implementations/burrowsWheelerTransform.py)
 	- io
-		- [test input 1](./implementations/io/sample.in.1)
-		- [test output 1](./implementations/io/sample.out.1)
-		- ...add more as needed
+		- [sample input 1](./implementations/io/sample.in.1) / [sample output 1](./implementations/io/sample.out.1)
+		- [sample input 2](./implementations/io/sample.in.2) / [sample output 2](./implementations/io/sample.out.2)
+		- [sample input 3](./implementations/io/sample.in.3) / [sample output 3](./implementations/io/sample.out.3)
 
 <a name="overview"></a>Slides
 ---------------------------------------
 
-- [Presentation Slides](./slides/presentation_coinChange.pptx)
+- [Presentation Slides](./slides/Burrows-Wheeler Transform.pptx)
 
 
 <a name="overview"></a>Programming Challenge
@@ -33,9 +31,9 @@ Go [back to home page](../../index.html)
 
 - [Programming Challenge](./programmingChallenge/problemStatement.pdf)
 	- Solutions:
-		- [C++](./programmingChallenge/solutions.pcSol_cpp.cpp)
+		- [Python](./programmingChallenge/solutions/pcSol_py.py)
 	- Test Cases:
 		- [Case 1 input](./programmingChallenge/io/test.in.1)
 		- [Case 1 output](./programmingChallenge/io/test.out.1)
-		- ...add the others here as needed
+		- [...the rest of the test cases](./programmingChallenge/io/)
 	

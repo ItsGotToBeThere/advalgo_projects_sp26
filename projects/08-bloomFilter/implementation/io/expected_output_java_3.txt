@@ -1,0 +1,10 @@
+m=93 k=4 n=15 p=0.05
+red     member
+green   member
+cyan-never-added        absent
+yellow  member
+magenta-never-added     absent
+blue    member
+orange  member
+violet  member
+pink-never-added        absent

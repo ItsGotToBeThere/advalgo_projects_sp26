@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Project 07 - Treaps</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../markdown.css" />
+</head>
+<body>
+<h1 id="project-07---treaps">Project 07 - Treaps</h1>
+<p>Go <a href="../../index.html">back to home page</a></p>
+<h2 id="executive-summary"><a name="overview"></a>Executive Summary</h2>
+<ul>
+<li><a href="./executiveSummary.pdf">Executive Summary</a></li>
+</ul>
+<h2 id="implementation"><a name="overview"></a>Implementation</h2>
+<ul>
+<li>Implementations:
+<ul>
+<li><a href="./implementations/treaps.cpp">C++</a></li>
+<li><a href="./implementations/treaps.java">Java</a></li>
+<li><a href="./implementations/treaps.py">Python</a></li>
+<li>io
+<ul>
+<li><a href="./implementations/io/sample.in.1">test input 1</a></li>
+<li><a href="./implementations/io/sample.in.2">test input 2</a></li>
+<li><a href="./implementations/io/sample.in.3">test input 3</a></li>
+<li><a href="./implementations/io/sample.out.1">test output 1</a></li>
+<li><a href="./implementations/io/sample.out.2">test output 2</a></li>
+<li><a href="./implementations/io/sample.out.3">test output 3</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="slides"><a name="overview"></a>Slides</h2>
+<ul>
+<li><a href="./slides/Treaps.pptx">Presentation Slides</a></li>
+</ul>
+<h2 id="programming-challenge"><a name="overview"></a>Programming
+Challenge</h2>
+<ul>
+<li><a href="./programmingChallenge/problemStatement.pdf">Programming
+Challenge</a>
+<ul>
+<li>Solutions:
+<ul>
+<li><a
+href="./programmingChallenge/solutions/TreapCustom.java">Java</a></li>
+</ul></li>
+<li>Test Cases:
+<ul>
+<li><a
+href="./programmingChallenge/io/01_empty_tree_all_queries_in.txt">Case 1
+input</a></li>
+<li><a
+href="./programmingChallenge/io/01_empty_tree_all_queries_out.txt">Case
+1 output</a></li>
+<li><a
+href="./programmingChallenge/io/02_basic_build_then_queries_in.txt">Case
+2 input</a></li>
+<li><a
+href="./programmingChallenge/io/02_basic_build_then_queries_out.txt">Case
+2 output</a></li>
+<li><a
+href="./programmingChallenge/io/03_reversed_range_after_small_build_in.txt">Case
+3 input</a></li>
+<li><a
+href="./programmingChallenge/io/03_reversed_range_after_small_build_out.txt">Case
+3 output</a></li>
+<li><a
+href="./programmingChallenge/io/04_edge_queries_full_span_in.txt">Case 4
+input</a></li>
+<li><a
+href="./programmingChallenge/io/04_edge_queries_full_span_out.txt">Case
+4 output</a></li>
+<li><a
+href="./programmingChallenge/io/05_delete_on_empty_then_queries_in.txt">Case
+5 input</a></li>
+<li><a
+href="./programmingChallenge/io/05_delete_on_empty_then_queries_out.txt">Case
+5 output</a></li>
+<li><a
+href="./programmingChallenge/io/06_single_element_edges_in.txt">Case 6
+input</a></li>
+<li><a
+href="./programmingChallenge/io/06_single_element_edges_out.txt">Case 6
+output</a></li>
+<li><a
+href="./programmingChallenge/io/07_repeat_delete_idempotent_in.txt">Case
+7 input</a></li>
+<li><a
+href="./programmingChallenge/io/07_repeat_delete_idempotent_out.txt">Case
+7 output</a></li>
+<li><a href="./programmingChallenge/io/08_delete_leaf_node_in.txt">Case
+8 input</a></li>
+<li><a href="./programmingChallenge/io/08_delete_leaf_node_out.txt">Case
+8 output</a></li>
+<li><a
+href="./programmingChallenge/io/09_delete_node_with_two_children_in.txt">Case
+9 input</a></li>
+<li><a
+href="./programmingChallenge/io/09_delete_node_with_two_children_out.txt">Case
+9 output</a></li>
+<li><a
+href="./programmingChallenge/io/10_delete_nonexistent_key_in.txt">Case
+10 input</a></li>
+<li><a
+href="./programmingChallenge/io/10_delete_nonexistent_key_out.txt">Case
+10 output</a></li>
+<li><a
+href="./programmingChallenge/io/11_range_single_point_present_absent_in.txt">Case
+11 input</a></li>
+<li><a
+href="./programmingChallenge/io/11_range_single_point_present_absent_out.txt">Case
+11 output</a></li>
+<li><a
+href="./programmingChallenge/io/12_count_below_minimum_in.txt">Case 12
+input</a></li>
+<li><a
+href="./programmingChallenge/io/12_count_below_minimum_out.txt">Case 12
+output</a></li>
+<li><a
+href="./programmingChallenge/io/13_count_between_values_in.txt">Case 13
+input</a></li>
+<li><a
+href="./programmingChallenge/io/13_count_between_values_out.txt">Case 13
+output</a></li>
+<li><a
+href="./programmingChallenge/io/14_range_outside_bounds_in.txt">Case 14
+input</a></li>
+<li><a
+href="./programmingChallenge/io/14_range_outside_bounds_out.txt">Case 14
+output</a></li>
+<li><a
+href="./programmingChallenge/io/15_increasing_inserts_then_queries_in.txt">Case
+15 input</a></li>
+<li><a
+href="./programmingChallenge/io/15_increasing_inserts_then_queries_out.txt">Case
+15 output</a></li>
+<li><a
+href="./programmingChallenge/io/16_decreasing_inserts_then_queries_in.txt">Case
+16 input</a></li>
+<li><a
+href="./programmingChallenge/io/16_decreasing_inserts_then_queries_out.txt">Case
+16 output</a></li>
+<li><a
+href="./programmingChallenge/io/17_mixed_updates_then_queries_in.txt">Case
+17 input</a></li>
+<li><a
+href="./programmingChallenge/io/17_mixed_updates_then_queries_out.txt">Case
+17 output</a></li>
+<li><a href="./programmingChallenge/io/18_sum_focus_in.txt">Case 18
+input</a></li>
+<li><a href="./programmingChallenge/io/18_sum_focus_out.txt">Case 18
+output</a></li>
+<li><a
+href="./programmingChallenge/io/19_speed_bulk_insert_delete_prefix_in.txt">Case
+19 input</a></li>
+<li><a
+href="./programmingChallenge/io/19_speed_bulk_insert_delete_prefix_out.txt">Case
+19 output</a></li>
+<li><a
+href="./programmingChallenge/io/20_speed_two_phase_delete_reinsert_block_in.txt">Case
+20 input</a></li>
+<li><a
+href="./programmingChallenge/io/20_speed_two_phase_delete_reinsert_block_out.txt">Case
+20 output</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</body>
+</html>

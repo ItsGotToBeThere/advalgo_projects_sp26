@@ -1,0 +1,77 @@
+Treap 
+
+Surprise! You’ve just landed a role at CFAANG working on credit card fraud detection. Every second, thousands of transaction values are processed, inserted, and removed from your system. Analysts need to quickly understand the distribution of these transactions in real time.
+
+To handle this efficiently, you decide to use a Treap-based data structure.
+
+Assume that basic Treap operations (INSERT, DELETE, and SEARCH) are already implemented.
+
+Your task is to extend this structure to support the following additional operations:
+
+KTH k
+Return the k-th smallest element currently in the set.
+
+COUNT x
+Return the number of elements less than or equal to x.
+
+RANGE l r
+Return the number of elements in the interval [l, r].
+
+Requirements
+
+All of these operations must run in O(logn) time
+You must extend the treap properly by storing additional information as needed in each node.
+this may require you do modify the following functions:
+
+insertion
+deletion
+split
+merge 
+Input
+
+The first line contains an integer Q (1 ≤ Q ≤ 2 × 10⁵), the number of operations.
+
+Each of the next Q lines contains one operation of the following form:
+
+INSERT x
+DELETE x
+SEARCH x
+KTH k
+COUNT x
+RANGE l r
+
+x, l, r are integers in the range [0, 10⁹]
+
+1 ≤ k ≤ current size of the set of nodes
+
+You may assume all inserted values are unique
+
+Output
+
+For each query operation, output the result on its own line:
+
+SEARCH x, output true or false
+KTH k, output the k-th smallest element
+COUNT x, output an integer
+RANGE l r, output an integer
+
+Example
+Input
+8
+INSERT 5
+INSERT 3
+INSERT 7
+KTH 2
+COUNT 5
+RANGE 3 7
+DELETE 5
+KTH 2
+Output
+5
+2
+3
+7
+
+Notes
+Efficient solutions must use a Treap or another balanced data structure, naive or brute force solutions will fail
+You will need to add to every node additional metadata to support faster queries

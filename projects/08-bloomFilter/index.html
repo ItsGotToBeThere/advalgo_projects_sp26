@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Project 08 - Bloom Filter</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../markdown.css" />
+</head>
+<body>
+<h1 id="project-08---bloom-filter">Project 08 - Bloom Filter</h1>
+<p>Go <a href="../../index.html">back to home page</a></p>
+<h2 id="executive-summary"><a name="overview"></a>Executive Summary</h2>
+<ul>
+<li><a href="./executiveSummary.pdf">Executive Summary</a></li>
+</ul>
+<h2 id="implementation"><a name="overview"></a>Implementation</h2>
+<ul>
+<li>Implementations:
+<ul>
+<li><a href="./implementation/bloomFilter.cpp">C++</a></li>
+<li><a href="./implementation/BloomFilter.java">Java</a></li>
+<li><a href="./implementation/BloomFilter.py">Python</a></li>
+</ul></li>
+<li>I/O (three separate cases; first line of each test file is the case
+count, usually <code>1</code>)
+<ul>
+<li>Tests: <a href="./implementation/io/sample.in.1">sample.in.1</a>, <a
+href="./implementation/io/sample.in.2">sample.in.2</a>, <a
+href="./implementation/io/sample.in.3">sample.in.3</a></li>
+<li>Python expected: <a
+href="./implementation/io/expected_output_python_1.txt">expected_output_python_1.txt</a>,
+<a href="./implementation/io/expected_output_python_2.txt">_2</a>, <a
+href="./implementation/io/expected_output_python_3.txt">_3</a></li>
+<li>Java expected: <a
+href="./implementation/io/expected_output_java_1.txt">expected_output_java_1.txt</a>,
+<a href="./implementation/io/expected_output_java_2.txt">_2</a>, <a
+href="./implementation/io/expected_output_java_3.txt">_3</a></li>
+<li>C++ expected: <a
+href="./implementation/io/expected_output_cpp_1.txt">expected_output_cpp_1.txt</a>,
+<a href="./implementation/io/expected_output_cpp_2.txt">_2</a>, <a
+href="./implementation/io/expected_output_cpp_3.txt">_3</a>
+(placeholder)</li>
+</ul></li>
+</ul>
+<p><strong>Implementation note.</strong> Different hash schemes change
+false positives vs absent; compare each language to its own expected
+file. Example:
+<code>python3 BloomFilter.py implementation/io/sample.in.1</code> then
+diff against <code>expected_output_python_1.txt</code>.</p>
+<h2 id="slides"><a name="overview"></a>Slides</h2>
+<ul>
+<li><a href="./slides/FinalPresentation_BloomFilter.pptx">Presentation
+Slides</a></li>
+</ul>
+<h2 id="programming-challenge"><a name="overview"></a>Programming
+Challenge</h2>
+<ul>
+<li><a href="./programmingChallenge/problem_statement.pdf">Programming
+Challenge</a>
+<ul>
+<li>Solutions:
+<ul>
+<li><a
+href="./programmingChallenge/solutions/pcSol_python.py">Python</a></li>
+</ul></li>
+<li>Test Cases:
+<ul>
+<li><a
+href="./programmingChallenge/io/testcase_01_smoke_baseline.in">Case 1
+input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_01_smoke_baseline.out">Case 1
+output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_02_all_allowed_no_hits.in">Case
+2 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_02_all_allowed_no_hits.out">Case
+2 output</a></li>
+<li><a href="./programmingChallenge/io/testcase_03_all_blocked.in">Case
+3 input</a></li>
+<li><a href="./programmingChallenge/io/testcase_03_all_blocked.out">Case
+3 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_04_empty_or_whitespace_queries.in">Case
+4 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_04_empty_or_whitespace_queries.out">Case
+4 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_05_single_word_tokens_low_epsilon.in">Case
+5 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_05_single_word_tokens_low_epsilon.out">Case
+5 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_06_n100_m500_repeated_titles.in">Case
+6 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_06_n100_m500_repeated_titles.out">Case
+6 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_07_case_sensitive_tokens.in">Case
+7 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_07_case_sensitive_tokens.out">Case
+7 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_08_very_long_token_200char.in">Case
+8 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_08_very_long_token_200char.out">Case
+8 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_09_punctuation_dashes_and_hashes.in">Case
+9 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_09_punctuation_dashes_and_hashes.out">Case
+9 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_10_high_epsilon_28.in">Case 10
+input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_10_high_epsilon_28.out">Case 10
+output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_11_n12_m400_many_queries.in">Case
+11 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_11_n12_m400_many_queries.out">Case
+11 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_12_m1000_throughput_stress.in">Case
+12 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_12_m1000_throughput_stress.out">Case
+12 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_13_n200_m800_synthetic_blocklist.in">Case
+13 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_13_n200_m800_synthetic_blocklist.out">Case
+13 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_14_sparse_blocklist_hits.in">Case
+14 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_14_sparse_blocklist_hits.out">Case
+14 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_15_utf8_beyond_ascii.in">Case
+15 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_15_utf8_beyond_ascii.out">Case
+15 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_16_mixed_query_line_lengths.in">Case
+16 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_16_mixed_query_line_lengths.out">Case
+16 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_17_sequential_id_blocklist.in">Case
+17 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_17_sequential_id_blocklist.out">Case
+17 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_18_n400_m800_soak.in">Case 18
+input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_18_n400_m800_soak.out">Case 18
+output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_19_epsilon_29_boundary.in">Case
+19 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_19_epsilon_29_boundary.out">Case
+19 output</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_20_many_tokens_per_request_line.in">Case
+20 input</a></li>
+<li><a
+href="./programmingChallenge/io/testcase_20_many_tokens_per_request_line.out">Case
+20 output</a></li>
+</ul></li>
+<li>More: <a href="./programmingChallenge/io/README.md">descriptions of
+each test case (README)</a> · <a
+href="./programmingChallenge/io/sample_illustration.in">sample handout
+I/O (illustration only)</a> / <a
+href="./programmingChallenge/io/sample_illustration.out">out</a></li>
+</ul></li>
+</ul>
+</body>
+</html>

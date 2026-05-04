@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Project 12 - Knuth-Morris Pratt</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../markdown.css" />
+</head>
+<body>
+<h1 id="project-12---knuth-morris-pratt">Project 12 - Knuth-Morris
+Pratt</h1>
+<p>Go <a href="../../index.html">back to home page</a></p>
+<p><strong>NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT
+WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS
+REPOSITORY</strong></p>
+<h2 id="executive-summary"><a name="overview"></a>Executive Summary</h2>
+<ul>
+<li><a href="./Executive%20Summary.pdf">Executive Summary</a></li>
+</ul>
+<h2 id="implementation"><a name="overview"></a>Implementation</h2>
+<ul>
+<li>Implementations:
+<ul>
+<li><a href="./implementations/kmp.cpp">C++</a></li>
+<li><a href="./implementations/kmp.java">Java</a></li>
+<li><a href="./implementations/kmp.py">Python</a></li>
+<li>io
+<ul>
+<li><a href="./implementation/io/in1.txt">test input 1</a></li>
+<li><a href="./implementation/io/out1.txt">test output 1</a></li>
+<li><a href="./implementation/io/in2.txt">test input 2</a></li>
+<li><a href="./implementation/io/out2.txt">test output 2</a></li>
+<li><a href="./implementation/io/in3.txt">test input 3</a></li>
+<li><a href="./implementation/io/out3.txt">test output 3</a></li>
+<li><a href="./implementation/io/in4.txt">test input 4</a></li>
+<li><a href="./implementation/io/out4.txt">test output 4</a></li>
+<li><a href="./implementation/io/in5.txt">test input 5</a></li>
+<li><a href="./implementation/io/out5.txt">test output 5</a></li>
+<li><a href="./implementation/io/in6.txt">test input 6</a></li>
+<li><a href="./implementation/io/out6.txt">test output 6</a></li>
+<li><a href="./implementation/io/in7.txt">test input 7</a></li>
+<li><a href="./implementation/io/out7.txt">test output 7</a></li>
+<li><a href="./implementation/io/in8.txt">test input 8</a></li>
+<li><a href="./implementation/io/out8.txt">test output 8</a></li>
+<li><a href="./implementation/io/in9.txt">test input 9</a></li>
+<li><a href="./implementation/io/out9.txt">test output 9</a></li>
+<li><a href="./implementation/io/in10.txt">test input 10</a></li>
+<li><a href="./implementation/io/out10.txt">test output 10</a></li>
+<li><a href="./implementation/io/in11.txt">test input 11</a></li>
+<li><a href="./implementation/io/out11.txt">test output 11</a></li>
+<li><a href="./implementation/io/in12.txt">test input 12</a></li>
+<li><a href="./implementation/io/out12.txt">test output 12</a></li>
+<li><a href="./implementation/io/in13.txt">test input 13</a></li>
+<li><a href="./implementation/io/out13.txt">test output 13</a></li>
+<li><a href="./implementation/io/in14.txt">test input 14</a></li>
+<li><a href="./implementation/io/out14.txt">test output 14</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="slides"><a name="overview"></a>Slides</h2>
+<ul>
+<li><a
+href="./slides/FinalProjectPresentation-AdvancedAlgorithms.pptx">Presentation
+Slides</a></li>
+</ul>
+<h2 id="programming-challenge"><a name="overview"></a>Programming
+Challenge</h2>
+<ul>
+<li><a href="./programmingChallenge/problemStatement.pdf">Programming
+Challenge</a>
+<ul>
+<li>Solutions:
+<ul>
+<li><a
+href="./programmingChallenge/solutions/customkmpchallenge.py">Python</a></li>
+</ul></li>
+<li>Test Cases:</li>
+<li><a href="./io/in1.txt">Case 1 input</a></li>
+<li><a href="./io/out1.txt">Case 1 output</a></li>
+<li><a href="./io/in2.txt">Case 2 input</a></li>
+<li><a href="./io/out2.txt">Case 2 output</a></li>
+<li><a href="./io/in3.txt">Case 3 input</a></li>
+<li><a href="./io/out3.txt">Case 3 output</a></li>
+<li><a href="./io/in4.txt">Case 4 input</a></li>
+<li><a href="./io/out4.txt">Case 4 output</a></li>
+<li><a href="./io/in5.txt">Case 5 input</a></li>
+<li><a href="./io/out5.txt">Case 5 output</a></li>
+<li><a href="./io/in6.txt">Case 6 input</a></li>
+<li><a href="./io/out6.txt">Case 6 output</a></li>
+<li><a href="./io/in7.txt">Case 7 input</a></li>
+<li><a href="./io/out7.txt">Case 7 output</a></li>
+<li><a href="./io/in8.txt">Case 8 input</a></li>
+<li><a href="./io/out8.txt">Case 8 output</a></li>
+<li><a href="./io/in9.txt">Case 9 input</a></li>
+<li><a href="./io/out9.txt">Case 9 output</a></li>
+<li><a href="./io/in10.txt">Case 10 input</a></li>
+<li><a href="./io/out10.txt">Case 10 output</a></li>
+<li><a href="./io/in11.txt">Case 11 input</a></li>
+<li><a href="./io/out11.txt">Case 11 output</a></li>
+<li><a href="./io/in12.txt">Case 12 input</a></li>
+<li><a href="./io/out12.txt">Case 12 output</a></li>
+<li><a href="./io/in13.txt">Case 13 input</a></li>
+<li><a href="./io/out13.txt">Case 13 output</a></li>
+<li><a href="./io/in14.txt">Case 14 input</a></li>
+<li><a href="./io/out14.txt">Case 14 output</a></li>
+<li><a href="./io/in15.txt">Case 15 input</a></li>
+<li><a href="./io/out15.txt">Case 15 output</a></li>
+<li><a href="./io/in16.txt">Case 16 input</a></li>
+<li><a href="./io/out16.txt">Case 16 output</a></li>
+<li><a href="./io/in17.txt">Case 17 input</a></li>
+<li><a href="./io/out17.txt">Case 17 output</a></li>
+<li><a href="./io/in18.txt">Case 18 input</a></li>
+<li><a href="./io/out18.txt">Case 18 output</a></li>
+<li><a href="./io/in19.txt">Case 19 input</a></li>
+<li><a href="./io/out19.txt">Case 19 output</a></li>
+<li><a href="./io/in20.txt">Case 20 input</a></li>
+<li><a href="./io/out20.txt">Case 20 output</a></li>
+<li><a href="./io/in21.txt">Case 21 input</a></li>
+<li><a href="./io/out21.txt">Case 21 output</a></li>
+<li><a href="./io/in22.txt">Case 22 input</a></li>
+<li><a href="./io/out22.txt">Case 22 output</a></li>
+</ul></li>
+</ul>
+</body>
+</html>
